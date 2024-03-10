@@ -4,9 +4,16 @@
 // getClientWithNoMoney(bankAccounts) => ['Kevin', 'Jon']
 
 export function getClientWithNoMoney(array) {
-  // Your code goes here...
+  const accountsWithNoMoney = array.filter(account => account.balance === 0);
+
+  const clientsWithNoMoney = accountsWithNoMoney.map(account => account.name);
+
+  return clientsWithNoMoney;
+
 
 }
+
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"

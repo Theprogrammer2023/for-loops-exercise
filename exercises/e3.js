@@ -9,8 +9,16 @@
  * */
 
 export function getAverage(array) {
-  // Your code goes here...
+  if (array.length === 0) {
+    return 0;
+  }
 
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+
+  return sum / array.length;
 }
 
 
@@ -22,7 +30,25 @@ export function getAverage(array) {
  * */ 
 
 export function getStringSum(str) {
-  // Your code goes here...
+  let sum = 0;
+  let currentNumber = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+
+    if (/[0-9]/.test(char)) {
+
+      currentNumber = currentNumber * 10 + parseInt(char, 10);
+    } else {
+  
+      sum += currentNumber;
+      currentNumber = 0; 
+    }
+  }
+
+  sum += currentNumber;
+
+  return sum;
 
 }
 

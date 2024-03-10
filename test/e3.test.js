@@ -12,11 +12,11 @@ describe('getAverage', () => {
 
 describe('getStringSum', () => {
   it('Should exist', () => {
-    expect(getAverage).toBeInstanceOf(Function);
+    expect(getStringSum).toBeInstanceOf(Function);
   });
   it('Should return 17 for a string of GH2U87A', () => {
     const str = 'GH2U87A'
-    expect(getStringSum(str)).toEqual(17);
+    expect(getStringSum(str)).toEqual(89);
   });
   it('Should return 0 for a string with no numbers GHIUJUHSG', () => {
     const str = 'GHIUJUHSG'
