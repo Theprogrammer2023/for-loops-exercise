@@ -9,9 +9,21 @@ export function getClientsWithLetterInName(array, letter) {
   for (let i = 0; i < array.length; i++) {
     const account = array[i];
     const lowerCaseName = account.name.toLowerCase();
+    let nameToAdd = "";
 
-    if (lowerCaseName.includes(letter.toLowerCase())) {
-      clientsWithLetterInName.push(account.name);
+    let hasLetter = false;
+    for (let j = 0; j < lowerCaseName.length; j++) {
+      if (lowerCaseName[j] === letter.toLowerCase()) {
+        hasLetter = true;
+        break;
+      }
+    }
+
+    if (hasLetter) {
+      for (let k = 0; k < account.name.length; k++) {
+        nameToAdd += account.name[k];
+      }
+      clientsWithLetterInName.push(nameToAdd);
     }
   }
 
