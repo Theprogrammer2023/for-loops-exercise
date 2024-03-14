@@ -7,7 +7,7 @@ export function getClientWithNoMoney(array) {
   const clientsWithNoMoney = [];
 
   for (const account of array) {
-    if (account.balance <= 0) {
+    if (account.balance === 0) {
       clientsWithNoMoney.push(account.name);
     }
   }
